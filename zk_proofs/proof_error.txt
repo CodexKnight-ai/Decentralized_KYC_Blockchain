@@ -1,0 +1,6 @@
+Error: Not all inputs have been set. Only 2 out of 3
+    at WitnessCalculatorCircom2._doCalculateWitness (C:\Users\dharm\Downloads\Decentralized_KYC_Blockchain\zk_proofs\node_modules\circom_runtime\build\main.cjs:535:19)
+    at WitnessCalculatorCircom2.calculateWTNSBin (C:\Users\dharm\Downloads\Decentralized_KYC_Blockchain\zk_proofs\node_modules\circom_runtime\build\main.cjs:559:20)
+    at wtnsCalculate (C:\Users\dharm\Downloads\Decentralized_KYC_Blockchain\zk_proofs\node_modules\snarkjs\build\main.cjs:1315:28)
+    at async Object.groth16FullProve [as fullProve] (C:\Users\dharm\Downloads\Decentralized_KYC_Blockchain\zk_proofs\node_modules\snarkjs\build\main.cjs:1348:5)
+    at async main (C:\Users\dharm\Downloads\Decentralized_KYC_Blockchain\zk_proofs\scripts\generate_proof.js:58:38)
