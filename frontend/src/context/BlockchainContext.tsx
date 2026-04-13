@@ -47,6 +47,7 @@ export const BlockchainProvider: React.FC<{ children: ReactNode }> = ({ children
           setProvider(browserProvider);
           setSigner(userSigner);
 
+          console.log("Initializing contracts with addresses:", contractAddresses);
           const kyc = new ethers.Contract(contractAddresses.decentralizedKycAddress, KYC_ABI, userSigner);
           const multi = new ethers.Contract(contractAddresses.multiSigAddress, MultiSig_ABI, userSigner);
 
@@ -54,7 +55,12 @@ export const BlockchainProvider: React.FC<{ children: ReactNode }> = ({ children
           setMultiSigContract(multi);
 
           // Detect Roles
+          console.log("Calling government() on:", contractAddresses.decentralizedKycAddress);
+          const network = await browserProvider.getNetwork();
+          console.log("Current Network:", network.name, "Chain ID:", network.chainId.toString());
+          
           const govAddress = await kyc.government();
+          console.log("Government address received:", govAddress);
           setIsGovernment(address.toLowerCase() === govAddress.toLowerCase());
           
           const entity = await kyc.entityRegistry(address);
